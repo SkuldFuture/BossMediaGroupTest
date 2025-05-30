@@ -9,10 +9,9 @@ from drf_spectacular.views import (
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("api/", include("boss_test.apps.authentification.urls")),
-    path('api/', include('boss_test.apps.tasks.urls')),
-    path('api/', include('boss_test.apps.parser.urls')),
-    # path('tech-companies/', get_tech_companies, name='tech_companies'),
+    path("api/", include("boss_media_group.apps.authentification.urls")),
+    path('api/', include('boss_media_group.apps.tasks.urls')),
+    path('api/', include('boss_media_group.apps.parser.urls')),
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
     path('api/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),

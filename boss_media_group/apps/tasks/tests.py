@@ -1,7 +1,7 @@
 import pytest
 from rest_framework.test import APIClient
 from django.contrib.auth import get_user_model
-from boss_test.apps.tasks.models import Task
+from boss_media_group.apps.tasks.models import Task
 
 User = get_user_model()
 

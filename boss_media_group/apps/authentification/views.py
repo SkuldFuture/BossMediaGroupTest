@@ -1,7 +1,7 @@
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework import generics
 
-from boss_test.apps.authentification.serializers import RegisterSerializer, EmailTokenObtainPairSerializer
+from boss_media_group.apps.authentification.serializers import RegisterSerializer, EmailTokenObtainPairSerializer
 
 
 class EmailTokenObtainPairView(TokenObtainPairView):

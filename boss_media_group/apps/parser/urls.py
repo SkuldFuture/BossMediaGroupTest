@@ -1,7 +1,7 @@
 from django.urls import path
 from rest_framework.routers import DefaultRouter
 
-from boss_test.apps.parser.views import get_tech_companies, run_astana_hub_parser
+from boss_media_group.apps.parser.views import get_tech_companies, run_astana_hub_parser
 
 router = DefaultRouter()
 

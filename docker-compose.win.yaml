@@ -14,6 +14,8 @@ services:
       - "${BACKEND_PORT}:${BACKEND_PORT}"
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    networks:
+      - boss-test-network
     restart: on-failure
     depends_on:
       - boss-test-db
@@ -32,6 +34,11 @@ services:
       - "${DATABASE_PORT}:${DATABASE_PORT}"
     extra_hosts:
       - "host.docker.internal:host-gateway"
+    networks:
+      - boss-test-network
+
+networks:
+  boss-test-network:
 
 volumes:
   postgres_data:

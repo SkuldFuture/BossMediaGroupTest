@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from boss_test.apps.tasks.models import Task
+from boss_media_group.apps.tasks.models import Task
 
 
 class TaskSerializer(serializers.ModelSerializer):

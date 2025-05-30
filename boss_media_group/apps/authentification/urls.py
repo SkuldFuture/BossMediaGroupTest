@@ -2,7 +2,7 @@ from django.urls import path
 from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenRefreshView
 
-from boss_test.apps.authentification.views import EmailTokenObtainPairView, RegisterView
+from boss_media_group.apps.authentification.views import EmailTokenObtainPairView, RegisterView
 
 router = DefaultRouter()
 

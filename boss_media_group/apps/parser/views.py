@@ -3,9 +3,9 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 
-from boss_test.apps.parser.astana_hub_parser import astana_hub_parser
-from boss_test.apps.parser.models import TechCompany
-from boss_test.apps.parser.serializers import TechCompanySerializer
+from boss_media_group.apps.parser.astana_hub_parser import astana_hub_parser
+from boss_media_group.apps.parser.models import TechCompany
+from boss_media_group.apps.parser.serializers import TechCompanySerializer
 
 
 @extend_schema(

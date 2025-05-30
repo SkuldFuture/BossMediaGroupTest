@@ -41,10 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'boss_test.apps.authentification',
-    'boss_test.apps.parser',
-    'boss_test.apps.tasks',
-    'boss_test.apps.core',
+    'boss_media_group.apps.authentification',
+    'boss_media_group.apps.parser',
+    'boss_media_group.apps.tasks',
+    'boss_media_group.apps.core',
     'drf_spectacular',
     'django_filters',
 ]
@@ -86,9 +86,9 @@ REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': ('rest_framework.renderers.JSONRenderer',),
     'DEFAULT_FILTER_BACKENDS': [
         'django_filters.rest_framework.DjangoFilterBackend',
-        'boss_test.apps.core.libs.labeled_override.CustomSearchFilter',
+        'boss_media_group.apps.core.libs.labeled_override.CustomSearchFilter',
     ],
-    'DEFAULT_PAGINATION_CLASS': 'boss_test.apps.core.libs.labeled_override.CustomPagination',
+    'DEFAULT_PAGINATION_CLASS': 'boss_media_group.apps.core.libs.labeled_override.CustomPagination',
 }
 
 # Database

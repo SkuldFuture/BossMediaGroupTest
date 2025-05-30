@@ -46,24 +46,13 @@ formatter = CustomFormatter('%(asctime)s [%(levelname)s] [%(funcName)s] %(messag
 handler.setFormatter(formatter)
 
 logger.addHandler(handler)
-logger.addHandler(
-    GelfTcpHandler(host='81.94.159.8', port=12201, include_extra_fields=True)
-)
+
 logger.addFilter(ContextFilter())
 logger.setLevel(logging.DEBUG)
-
-
-class TestClass:
-    def test_method(self):
-        logger.debug(
-            'Тест logger: TestClass.test_method', extra={'class_name': 'TestClass'}
-        )
 
 
 def another_function():
     logger.debug('Тест logger: another_function')
 
 
-test_instance = TestClass()
-test_instance.test_method()
 another_function()
