@@ -1,0 +1,42 @@
+version: '3.13'
+
+services:
+  boss-test-backend:
+    container_name: boss-test-backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - ./.env
+    volumes:
+      - ./:/BossMediaGroupTest
+    ports:
+      - "${BACKEND_PORT}:${BACKEND_PORT}"
+    networks:
+      - boss-test-network
+    restart: on-failure
+    depends_on:
+      - boss-test-db
+
+  boss-test-db:
+    container_name: boss-test-db
+    image: postgres:15
+    restart: unless-stopped
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=${DATABASE_USER}
+      - POSTGRES_PASSWORD=${DATABASE_PASSWORD}
+      - POSTGRES_DB=${DATABASE_NAME}
+    ports:
+      - "${DATABASE_PORT}:${DATABASE_PORT}"
+    networks:
+      - boss-test-network
+
+networks:
+  boss-test-network:
+
+volumes:
+  postgres_data:
+
+
