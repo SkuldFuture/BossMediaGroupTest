@@ -9,7 +9,7 @@ from boss_media_group.apps.parser.serializers import TechCompanySerializer
 
 
 @extend_schema(
-    summary="Запустить парсер Astana Hub",
+    summary="Получить данные с парсера Astana Hub",
     description="Запрашивает страницу технопарка, извлекает первые 10 компаний, "
                 "сохраняет их в БД и возвращает список названий.",
     tags=["Astana Hub"],
@@ -23,7 +23,7 @@ def run_astana_hub_parser(request):
     return Response({'company_names': company_names})
 
 @extend_schema(
-    summary="Получить сохранённые компании",
+    summary="Получить сохранённые имена компании",
     description="Возвращает все компании, собранные парсером Astana Hub.",
     tags=["Astana Hub"],
 )
